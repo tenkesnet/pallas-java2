@@ -1,3 +1,5 @@
+package Sikidom;
+
 public class Teglalap extends Sikidom {
     private double a, b;
 

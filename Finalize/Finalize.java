@@ -1,3 +1,5 @@
+package Finalize;
+
 public class Finalize {
     protected void finalize() throws Throwable {
         // ...

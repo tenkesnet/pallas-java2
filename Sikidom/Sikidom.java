@@ -1,3 +1,5 @@
+package Sikidom;
+
 public abstract class Sikidom {
     private boolean keruletKiszamitva = false;
     private boolean teruletKiszamitva = false;

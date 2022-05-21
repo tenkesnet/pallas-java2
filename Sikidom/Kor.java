@@ -1,3 +1,5 @@
+package Sikidom;
+
 public class Kor extends Sikidom {
     private double r;
 
