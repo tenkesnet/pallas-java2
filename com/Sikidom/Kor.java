@@ -1,4 +1,4 @@
-package Sikidom;
+package com.Sikidom;
 
 public class Kor extends Sikidom {
     private double r;

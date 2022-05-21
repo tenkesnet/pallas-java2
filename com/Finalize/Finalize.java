@@ -1,4 +1,4 @@
-package Finalize;
+package com.Finalize;
 
 public class Finalize {
     protected void finalize() throws Throwable {
