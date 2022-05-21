@@ -1,4 +1,4 @@
-package ArgumentumKiiro;
+package com.ArgumentumKiiro;
 
 public class ArgumentumKiiro {
     public static void main(String[] args) {

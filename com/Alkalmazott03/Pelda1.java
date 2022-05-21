@@ -1,9 +1,10 @@
-public class Pelda2 {
+package com.Alkalmazott03;
+public class Pelda1 {
     public static void main(String[] args) {
         Alkalmazott a;
-        int levonas;
 
         a = new Alkalmazott();
-        levonas = a.szja() + a.tb();
+        a.fizetestDuplaz();
+        a.fizetes *= 2;
     }
 }

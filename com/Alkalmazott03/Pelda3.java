@@ -1,3 +1,5 @@
+package com.Alkalmazott03;
+
 public class Pelda3 {
     public static void main(String[] args) {
         Alkalmazott a = new Alkalmazott(), b = new Alkalmazott();

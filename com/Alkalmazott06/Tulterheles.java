@@ -1,3 +1,4 @@
+package com.Alkalmazott06;
 public class Tulterheles {
     void m(Alkalmazott a1, Alkalmazott a2) {
         // ...
@@ -10,13 +11,13 @@ public class Tulterheles {
     }
     void proba () {
         Alkalmazott a = new Alkalmazott("Pista");
-        Alkalmazott af = new Fonok("Jóska");
-        Fonok f = new Fonok("Géza");
+        Alkalmazott af = new Fonok("Jï¿½ska");
+        Fonok f = new Fonok("Gï¿½za");
 
         m(a,a);               // m(Alkalmazott,Alkalmazott)
         m(a,af);              // m(Alkalmazott,Alkalmazott)
         m(a,f);               // m(Alkalmazott,Fonok)
-        m(f,f);               // fordítási hiba
+        //m(f,f);               // fordï¿½tï¿½si hiba
         m(f,(Alkalmazott)f);  // m(Fonok,Alkalmazott)   
     }
 }

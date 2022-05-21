@@ -1,9 +1,10 @@
+package com.Alkalmazott05;
 public class Alkalmazott {
     String nev;
     private int fizetes;
     private int evesFizetes;
-    static int nyugdijKorhatar = 60;   // általános nyugdíjkorhatár
-    int eletkor;                       // életkor személyenként
+    static int nyugdijKorhatar = 60;   // ï¿½ltalï¿½nos nyugdï¿½jkorhatï¿½r
+    int eletkor;                       // ï¿½letkor szemï¿½lyenkï¿½nt
 
     public Alkalmazott(String nev, int fizetes) {
         this.nev = nev;
@@ -57,7 +58,7 @@ public class Alkalmazott {
     boolean kevesebbetKeresMint(Alkalmazott masik) {
         return masik.tobbetKeresMint(this);
     }
-    int hatraVan() {                   // ennyi évet kell meg dolgozni
+    int hatraVan() {                   // ennyi ï¿½vet kell meg dolgozni
         return nyugdijKorhatar - eletkor;
     }
     static void nyugdijKorhatartEmel() {

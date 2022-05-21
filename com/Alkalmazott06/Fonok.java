@@ -1,3 +1,4 @@
+package com.Alkalmazott06;
 public class Fonok extends Alkalmazott {
     final int MAXBEOSZT = 20;
     Alkalmazott[] beosztottak = new Alkalmazott[MAXBEOSZT];

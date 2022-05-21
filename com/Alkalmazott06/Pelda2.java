@@ -1,6 +1,7 @@
+package com.Alkalmazott06;
 public class Pelda2 {
     public static void main(String[] args) {
-        Alkalmazott a = new Fonok("Kovács Gyula");
+        Alkalmazott a = new Fonok("Kovï¿½cs Gyula");
         int p, fp;
 
         p = a.potlek();

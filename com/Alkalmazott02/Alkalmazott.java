@@ -1,3 +1,4 @@
+package com.Alkalmazott02;
 public class Alkalmazott {
     String nev;
     int fizetes;

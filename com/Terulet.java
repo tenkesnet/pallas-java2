@@ -1,9 +1,9 @@
 package com;
 
 public class Terulet  {
-    double a;
-    double b;
-    double t;
+    protected double a;
+    protected double b;
+    public double t;
 
     public Terulet(int aoldal, int boldal) {
         a=aoldal;
