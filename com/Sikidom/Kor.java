@@ -15,4 +15,13 @@ public class Kor extends Sikidom {
     protected double teruletSzamit() {
         return r*r*Math.PI;
     }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if( ((Kor)obj).r == this.r){
+            return true;
+        }
+        return false;
+    }
+    
 }

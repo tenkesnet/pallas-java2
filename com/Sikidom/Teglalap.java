@@ -7,10 +7,10 @@ public class Teglalap extends Sikidom {
         this.a = a;
         this.b = b;
     }
-    public double a () {
+    public double getA () {
         return a;
     }
-    public double b () {
+    public double getB () {
         return b;
     }
     protected double keruletSzamit () {
@@ -18,5 +18,13 @@ public class Teglalap extends Sikidom {
     }
     protected double teruletSzamit () {
         return a*b;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if( ((Teglalap)obj).a == this.a && ((Teglalap)obj).b== this.b   ) {
+            return true;
+        }
+        return false;
     }
 }

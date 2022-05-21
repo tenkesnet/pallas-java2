@@ -14,7 +14,7 @@ public abstract class Sikidom {
         return kerulet;
     }
     public double terulet() {
-        if (!teruletKiszamitva) {
+        if ( ! teruletKiszamitva) {
             terulet = teruletSzamit();
             teruletKiszamitva = true;
         }
@@ -23,3 +23,4 @@ public abstract class Sikidom {
     protected abstract double keruletSzamit();
     protected abstract double teruletSzamit();
 }
+
