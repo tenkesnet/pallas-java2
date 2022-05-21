@@ -18,6 +18,9 @@ public class Kor extends Sikidom {
     
     @Override
     public boolean equals(Object obj) {
+        /* if(!(obj instanceof Kor)) {
+            return false;
+        } */
         if( ((Kor)obj).r == this.r){
             return true;
         }

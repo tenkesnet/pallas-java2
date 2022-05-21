@@ -22,6 +22,9 @@ public class Teglalap extends Sikidom {
     
     @Override
     public boolean equals(Object obj) {
+        if( !(obj instanceof Teglalap) ) {
+            return false;
+        }
         if( ((Teglalap)obj).a == this.a && ((Teglalap)obj).b== this.b   ) {
             return true;
         }
