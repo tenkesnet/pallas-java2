@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Person {
+    private static long id;
     private String name;
     private String motherName;
     private Date birthday;

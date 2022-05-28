@@ -4,20 +4,21 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Book {
+    private static long id;
     private String isbn;
     private String title;
     private String author;
     private ArrayList<String> genres;
-    private Date issue;
+    private Date issueDate;
     private Date rentalDate;
     private int state;
 
-    public Book(String isbn, String title, String author, ArrayList<String> genres, Date issue) {
+    public Book(String isbn, String title, String author, ArrayList<String> genres, Date issueDate) {
         this.isbn = isbn;
         this.title = title;
         this.author = author;
         this.genres = genres;
-        this.issue = issue;
+        this.issueDate = issueDate;
     }
 
     public void addGenre(String genre) {
@@ -49,11 +50,11 @@ public class Book {
     }
 
     public Date getIssue() {
-        return issue;
+        return issueDate;
     }
 
-    public void setIssue(Date issue) {
-        this.issue = issue;
+    public void setIssue(Date issueDate) {
+        this.issueDate = issueDate;
     }
 
     public Date getRentalDate() {

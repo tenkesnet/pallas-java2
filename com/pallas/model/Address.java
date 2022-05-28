@@ -1,6 +1,7 @@
 package com.pallas.model;
 
 public class Address {
+    private static long id;
     private String city;
     private String postalCode;
     private String street;

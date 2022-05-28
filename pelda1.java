@@ -10,6 +10,8 @@ import com.Sikidom.Kor;
 import com.Sikidom.Sikidom;
 import com.Sikidom.Teglalap;
 
+import com.google.gson.*;
+
 public class pelda1 {
 
     public static void main(String[] args) {
@@ -49,6 +51,10 @@ public class pelda1 {
         korok.add(new Kor(4));
         korok.add(new Kor(6));
         korok.add(new Kor(13));
+
+        Gson gson = new Gson();
+
+        System.out.println(gson.toJson(korok));
         try {
 
             // System.out.println(new Kor(13).equals("13-askor"));
