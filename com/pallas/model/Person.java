@@ -21,6 +21,10 @@ public class Person {
         this.address = address;
     }
 
+    public String getMotherName() {
+        return motherName;
+    }
+
     public void addBook(Book book) {
         books.add(book);
     }

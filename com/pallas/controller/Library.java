@@ -50,14 +50,14 @@ public class Library {
         // new ArrayList<String>(Arrays.asList("regény", "életrajzi")),
         // Date.from(new GregorianCalendar(1996, 1, 1).toInstant())));
         booksFromFile();
-        persons = new ArrayList<Person>();
-        persons.add(
+        // persons = new ArrayList<Person>();
+        personrepo.addPerson(
                 new Person(
                         "Kiss Géza",
                         "Szűcs Irén",
                         Date.from(new GregorianCalendar(1983, 1, 13).toInstant()),
                         new Address("city", "postalCode", "street")));
-        persons.add(
+        personrepo.addPerson(
                 new Person(
                         "Kiss Evelin",
                         "Szűcs Irén",
