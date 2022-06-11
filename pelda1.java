@@ -62,16 +62,16 @@ public class pelda1 {
         }
         // .......xx.........yy.......zz..........qq..................bb.....................
 
-        ArrayList<Kor> korok = null;
+        ArrayList<Kor2> korok = null;
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             String jstring = Files.readString(Path.of("korok.json"));
             korok = objectMapper.readValue(jstring,
-                    new TypeReference<ArrayList<Kor>>() {
+                    new TypeReference<ArrayList<Kor2>>() {
                     });
 
         } catch (IOException e) {
-            // TODO: handle exception
+            System.out.println(e);
         }
         System.out.println(korok);
         // korok.add(new Kor(4));
@@ -121,9 +121,10 @@ public class pelda1 {
             korok.removeAll(r);
 
             // System.out.println(new Kor(45).equals(new Kor(46)));
-            for (Kor k : korok) {
-                System.out.println(k.r() + " sugarú körnek a területe(" + k.hashCode() + "): " + k.terulet());
-            }
+            // for (Kor k : korok) {
+            // System.out.println(k.r() + " sugarú körnek a területe(" + k.hashCode() + "):
+            // " + k.terulet());
+            // }
             System.out.println("\n\n");
         } catch (ClassCastException ec) {
             System.err.println("Az összehasonlítás nem lehetséges");
