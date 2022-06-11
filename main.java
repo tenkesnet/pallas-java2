@@ -16,7 +16,7 @@ public class main {
         System.out.println("");
         lib.printRentals();
         System.out.println("");
-        lib.booksToFile();
+        System.out.println("A keresett (856867867856) könyv szerzzője: " + lib.getBook("856867867856").getAuthor());
         System.out.println("");
         // System.out.println(lib.personsToJSON());
     }

@@ -12,8 +12,8 @@ public interface IBookService {
 
     public void addBook(Book book);
 
-    public Person getBook(int id);
+    public Book getBook(int id);
 
-    public Person getBook(String isbn);
+    public Book getBook(String isbn);
 
 }

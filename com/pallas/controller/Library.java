@@ -40,8 +40,8 @@ public class Library {
 
         bookrepo.addBook(
                 new Book(
-                        "23423534534",
-                        "Kis Herceg",
+                        "I23423534534",
+                        "Kis Lovag",
                         "Kiss Géza",
                         new ArrayList<String>(Arrays.asList("novella")),
                         Date.from(new GregorianCalendar(1996, 1, 1).toInstant())));
@@ -71,7 +71,9 @@ public class Library {
     public void printBooks() {
         System.out.println("Könyvek listája:");
         for (Book book : books) {
-            System.out.println("-" + book.getTitle() + " ( " + String.join(",", book.getGenres()) + " )");
+            System.out.println(
+                    "-" + book.getTitle() + " ( " + String.join(",", book.getGenres()) + " ) - ISBN: "
+                            + book.getIsbn());
         }
     }
 
@@ -83,34 +85,13 @@ public class Library {
         }
     }
 
-    public void booksToFile() {
-        try {
-            FileOutputStream fos = new FileOutputStream("books.db", false);
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(books);
-            oos.close();
-            fos.close();
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
+    public Book getBook(String isbn) {
+        Book book = bookrepo.getBook(isbn);
+        if (book != null) {
+            return book;
         }
-    }
-
-    public void booksFromFile() {
-        try {
-            FileInputStream fis = new FileInputStream("books.db");
-            ObjectInputStream ois = new ObjectInputStream(fis);
-
-            books = (ArrayList) ois.readObject();
-
-            ois.close();
-            fis.close();
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
-            return;
-        } catch (ClassNotFoundException c) {
-            System.out.println("Class not found");
-            c.printStackTrace();
-            return;
+        {
+            return new Book("Nem ismert", "Nem ismert", "Nem ismert", null, null);
         }
     }
 

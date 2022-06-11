@@ -15,9 +15,9 @@ public class Book implements Serializable {
     private int state;
 
     public Book(String isbn, String title, String author, ArrayList<String> genres, Date issueDate) {
-        this.isbn = isbn;
-        this.title = title;
-        this.author = author;
+        this.isbn = isbn == null ? "" : isbn;
+        this.title = title == null ? "" : title;
+        this.author = author == null ? "" : title;
         this.genres = genres;
         this.issueDate = issueDate;
     }
@@ -27,7 +27,15 @@ public class Book implements Serializable {
     }
 
     public ArrayList<String> getGenres() {
-        return this.genres;
+        /*
+         * if(this.genres==null){
+         * result = new Arraylist<String>
+         * } else {
+         * result = this.genres;
+         * }
+         */
+        ArrayList<String> result = this.genres == null ? new ArrayList<String>() : this.genres;
+        return result;
     }
 
     public int getState() {
@@ -51,7 +59,7 @@ public class Book implements Serializable {
     }
 
     public Date getIssue() {
-        return issueDate;
+        return issueDate == null ? new Date() : this.issueDate;
     }
 
     public void setIssue(Date issueDate) {
@@ -59,7 +67,7 @@ public class Book implements Serializable {
     }
 
     public Date getRentalDate() {
-        return rentalDate;
+        return rentalDate == null ? new Date() : this.rentalDate;
     }
 
     public void setRentalDate(Date rentalDate) {

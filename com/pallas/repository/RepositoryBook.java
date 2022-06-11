@@ -33,8 +33,7 @@ public class RepositoryBook implements IRepositoryBook {
 
     @Override
     public Book getBook(String isbn) {
-        // TODO Auto-generated method stub
-        return null;
+        return bookservice.getBook(isbn);
     }
 
     @Override

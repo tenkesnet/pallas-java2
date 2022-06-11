@@ -47,15 +47,20 @@ public class ObjectBookService implements IBookService {
     }
 
     @Override
-    public Person getBook(int id) {
-        // TODO Auto-generated method stub
+    public Book getBook(int id) {
         return null;
     }
 
     @Override
-    public Person getBook(String isbn) {
-        // TODO Auto-generated method stub
-        return null;
+    public Book getBook(String isbn) {
+        Book result = null;
+        ArrayList<Book> books = getBooks();
+        for (Book b : books) {
+            if (b.getIsbn().equals(isbn)) {
+                result = b;
+            }
+        }
+        return result;
     }
 
     @Override
