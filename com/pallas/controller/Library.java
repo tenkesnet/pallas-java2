@@ -33,7 +33,7 @@ public class Library {
     private IRepositoryPerson personrepo;
 
     public Library(IRepositoryPerson personrepo) {
-        this.personrepo = personrepo,
+        this.personrepo = personrepo;
         books = new ArrayList<Book>();
         // books.add(
         // new Book(

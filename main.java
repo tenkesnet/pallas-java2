@@ -1,4 +1,5 @@
 import com.pallas.controller.Library;
+import com.pallas.repository.RepositoryPersonJSON;
 import com.pallas.repository.RepositoryPersonObject;
 
 public class main {
@@ -7,6 +8,7 @@ public class main {
         System.out.println("---------------------------------------------");
 
         RepositoryPersonObject objectrepo = new RepositoryPersonObject();
+        RepositoryPersonJSON jsonrepo = new RepositoryPersonJSON();
         Library lib = new Library(objectrepo);
         lib.printBooks();
         System.out.println("");
