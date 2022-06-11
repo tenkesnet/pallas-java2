@@ -1,6 +1,8 @@
 package com.pallas.model;
 
-public class Address {
+import java.io.Serializable;
+
+public class Address implements Serializable {
     private static long id;
     private String city;
     private String postalCode;

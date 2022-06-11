@@ -5,6 +5,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 
 import com.pallas.model.Person;
@@ -43,6 +45,7 @@ public class ObjectPersonService implements IPersonService {
     @Override
     public void addPersons(ArrayList<Person> persons) {
         try {
+            Files.deleteIfExists(Path.of("persons.db"));
             FileOutputStream fos = new FileOutputStream("persons.db", false);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(persons);

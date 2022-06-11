@@ -13,6 +13,7 @@ public class RepositoryPerson implements IRepositoryPerson {
     private IPersonService personservice;
 
     public RepositoryPerson(IPersonService personservice) {
+        this.personservice = personservice;
         if ((persons = personservice.getPersons()) == null) {
             persons = new ArrayList<Person>();
         }
@@ -37,13 +38,16 @@ public class RepositoryPerson implements IRepositoryPerson {
 
     @Override
     public void addPerson(Person person) {
+        boolean isExists = false;
         for (Person p : persons) {
-            if (p.getName() == person.getName() && p.getMotherName() == person.getMotherName()) {
-                return;
+            if (p.getName().equals(person.getName()) && p.getMotherName().equals(person.getMotherName())) {
+                isExists = true;
             }
         }
-        persons.add(person);
-        savePersons();
+        if (!isExists) {
+            persons.add(person);
+            savePersons();
+        }
     }
 
     @Override

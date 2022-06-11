@@ -53,7 +53,7 @@ public class Library {
         // persons = new ArrayList<Person>();
         personrepo.addPerson(
                 new Person(
-                        "Kiss Géza",
+                        "Kiss Gézáné",
                         "Szűcs Irén",
                         Date.from(new GregorianCalendar(1983, 1, 13).toInstant()),
                         new Address("city", "postalCode", "street")));
@@ -63,6 +63,7 @@ public class Library {
                         "Szűcs Irén",
                         Date.from(new GregorianCalendar(1988, 11, 31).toInstant()),
                         new Address("city", "postalCode", "street")));
+        persons = personrepo.getPersons();
     }
 
     public void printBooks() {

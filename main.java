@@ -1,14 +1,14 @@
 import com.pallas.controller.Library;
-import com.pallas.repository.RepositoryPersonJSON;
-import com.pallas.repository.RepositoryPersonObject;
+import com.pallas.repository.RepositoryPerson;
+
+import com.pallas.service.ObjectPersonService;
 
 public class main {
     public static void main(String[] args) {
         System.out.println("Üdvözöllek a könyvtár nyilvántartó programban");
         System.out.println("---------------------------------------------");
 
-        RepositoryPersonObject objectrepo = new RepositoryPersonObject();
-        RepositoryPersonJSON jsonrepo = new RepositoryPersonJSON();
+        RepositoryPerson objectrepo = new RepositoryPerson(new ObjectPersonService());
         Library lib = new Library(objectrepo);
         lib.printBooks();
         System.out.println("");
@@ -16,6 +16,6 @@ public class main {
         System.out.println("");
         lib.booksToFile();
         System.out.println("");
-        System.out.println(lib.personsToJSON());
+        // System.out.println(lib.personsToJSON());
     }
 }

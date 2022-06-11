@@ -1,9 +1,10 @@
 package com.pallas.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Person {
+public class Person implements Serializable {
     private static long id;
     private String name;
     private String motherName;
