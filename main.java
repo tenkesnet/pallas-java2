@@ -1,3 +1,5 @@
+import java.text.SimpleDateFormat;
+
 import com.pallas.controller.Library;
 import com.pallas.repository.RepositoryBook;
 import com.pallas.repository.RepositoryPerson;
@@ -18,6 +20,9 @@ public class main {
         System.out.println("");
         System.out.println("A keresett (856867867856) könyv szerzzője: " + lib.getBook("856867867856").getAuthor());
         System.out.println("");
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        System.out.println("A keresett (Kiss Géza) Születési ideje: " +
+                format.format(lib.getPerson("Kiss Géza", "Szűcs Irén").getBirthday()));
         // System.out.println(lib.personsToJSON());
     }
 }

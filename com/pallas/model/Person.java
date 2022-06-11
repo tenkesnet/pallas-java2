@@ -5,7 +5,9 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Person implements Serializable {
-    private static long id;
+    private long id;
+    private static long count = 1;
+
     private String name;
     private String motherName;
     private Date birthday;
@@ -20,6 +22,24 @@ public class Person implements Serializable {
         this.motherName = motherName;
         this.birthday = birthday;
         this.address = address;
+        this.id = count;
+        count++;
+    }
+
+    public static long getCount() {
+        return count;
+    }
+
+    public static void setCount(long count) {
+        Person.count = count;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getMotherName() {

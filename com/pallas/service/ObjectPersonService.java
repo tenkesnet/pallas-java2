@@ -9,6 +9,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 
+import com.pallas.model.Address;
 import com.pallas.model.Person;
 
 public class ObjectPersonService implements IPersonService {
@@ -27,19 +28,39 @@ public class ObjectPersonService implements IPersonService {
         } catch (Exception e) {
             return null;
         }
+        long maxid = 0;
+        for (Person p : persons) {
+            if (p.getId() > maxid) {
+                maxid = p.getId();
+            }
+        }
+        Person.setCount(maxid + 1);
         return persons;
     }
 
     @Override
-    public Person getPerson(int id) {
-        // TODO Auto-generated method stub
-        return null;
+    public Person getPerson(long id) {
+        Person result = null;
+        ArrayList<Person> persons = getPersons();
+        for (Person p : persons) {
+            if (p.getId() == id) {
+                result = p;
+            }
+        }
+        return result;
     }
 
     @Override
     public Person getPerson(String name, String motherName) {
-        // TODO Auto-generated method stub
-        return null;
+        Person result = null;
+        ArrayList<Person> persons = getPersons();
+        for (Person p : persons) {
+            if (p.getName().equals(name) && p.getMotherName().equals(motherName)) {
+                result = p;
+            }
+        }
+        return result;
+
     }
 
     @Override
@@ -60,6 +81,18 @@ public class ObjectPersonService implements IPersonService {
     @Override
     public void addPerson(Person persons) {
         // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void changeAddress(Person person, Address address) {
+        ArrayList<Person> persons = getPersons();
+        for (Person p : persons) {
+            if (p.getId() == person.getId()) {
+                p.setAddress(address);
+            }
+        }
+        addPersons(persons);
 
     }
 

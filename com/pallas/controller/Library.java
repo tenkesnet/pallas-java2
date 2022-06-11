@@ -53,11 +53,12 @@ public class Library {
                         new ArrayList<String>(Arrays.asList("regény", "életrajzi")),
                         Date.from(new GregorianCalendar(1996, 1, 1).toInstant())));
         books = bookrepo.getBooks();
+
         personrepo.addPerson(
                 new Person(
-                        "Kiss Gézá",
-                        "Szűcs Irén",
-                        Date.from(new GregorianCalendar(1983, 1, 13).toInstant()),
+                        "Orbán Viktor",
+                        "Varka Irén",
+                        Date.from(new GregorianCalendar(1963, 5, 13).toInstant()),
                         new Address("city", "postalCode", "street")));
         personrepo.addPerson(
                 new Person(
@@ -81,7 +82,9 @@ public class Library {
         System.out.println("Tagok listája:");
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
         for (Person person : persons) {
-            System.out.println("-" + person.getName() + " ( " + format.format(person.getBirthday()) + " )");
+            System.out.println("(" + person.getId() + ") " + person.getName() + " ( "
+                    + format.format(person.getBirthday()) + " ) Anyja neve: "
+                    + person.getMotherName());
         }
     }
 
@@ -93,6 +96,19 @@ public class Library {
         {
             return new Book("Nem ismert", "Nem ismert", "Nem ismert", null, null);
         }
+    }
+
+    public Person getPerson(String name, String motherName) {
+        return personrepo.getPerson(name, motherName);
+    }
+
+    public void changeAddress(long id, String city, String postalCode, String street) {
+        Person person = personrepo.getPerson(id);
+        if (person != null) {
+            Address address = new Address(city, postalCode, street);
+            personrepo.changeAddress(person, address);
+        }
+
     }
 
     public String personsToJSON() {

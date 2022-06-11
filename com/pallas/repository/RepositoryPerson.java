@@ -3,8 +3,12 @@ package com.pallas.repository;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.GregorianCalendar;
 
+import com.pallas.model.Address;
 import com.pallas.model.Person;
 import com.pallas.service.IPersonService;
 
@@ -25,15 +29,22 @@ public class RepositoryPerson implements IRepositoryPerson {
     }
 
     @Override
-    public Person getPerson(int id) {
-        // TODO Auto-generated method stub
-        return null;
+    public Person getPerson(long id) {
+        return personservice.getPerson(id);
     }
 
     @Override
     public Person getPerson(String name, String motherName) {
-        // TODO Auto-generated method stub
-        return null;
+        Person result = personservice.getPerson(name, motherName);
+        if (result == null) {
+            Person ismeretlen = new Person("Ismeretlen személy",
+                    "Isemeretlen",
+                    Date.from(new GregorianCalendar(1000, 0, 1)
+                            .toInstant()),
+                    new Address("Ismeretlen", "Ismeretlen", "Ismeretlen"));
+            return ismeretlen;
+        }
+        return result;
     }
 
     @Override
@@ -56,4 +67,9 @@ public class RepositoryPerson implements IRepositoryPerson {
 
     }
 
+    @Override
+    public void changeAddress(Person person, Address address) {
+        personservice.changeAddress(person, address);
+
+    }
 }
