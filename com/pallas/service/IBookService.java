@@ -10,7 +10,7 @@ public interface IBookService {
 
     public void addBooks(ArrayList<Book> books);
 
-    public void addBook(Person books);
+    public void addBook(Book book);
 
     public Person getBook(int id);
 

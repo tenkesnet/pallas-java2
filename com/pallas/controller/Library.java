@@ -25,35 +25,37 @@ import com.google.gson.Gson;
 import com.pallas.model.Address;
 import com.pallas.model.Book;
 import com.pallas.model.Person;
+import com.pallas.repository.IRepositoryBook;
 import com.pallas.repository.IRepositoryPerson;
 
 public class Library {
     private ArrayList<Book> books;
     private ArrayList<Person> persons;
     private IRepositoryPerson personrepo;
+    private IRepositoryBook bookrepo;
 
-    public Library(IRepositoryPerson personrepo) {
+    public Library(IRepositoryPerson personrepo, IRepositoryBook bookrepo) {
         this.personrepo = personrepo;
-        books = new ArrayList<Book>();
-        // books.add(
-        // new Book(
-        // "23423534534",
-        // "Kis Herceg",
-        // "Kiss Géza",
-        // new ArrayList<String>(Arrays.asList("novella")),
-        // Date.from(new GregorianCalendar(1996, 1, 1).toInstant())));
-        // books.add(
-        // new Book(
-        // "856867867856",
-        // "Schindler bárkája",
-        // "Nagy Lóránt",
-        // new ArrayList<String>(Arrays.asList("regény", "életrajzi")),
-        // Date.from(new GregorianCalendar(1996, 1, 1).toInstant())));
-        booksFromFile();
-        // persons = new ArrayList<Person>();
+        this.bookrepo = bookrepo;
+
+        bookrepo.addBook(
+                new Book(
+                        "23423534534",
+                        "Kis Herceg",
+                        "Kiss Géza",
+                        new ArrayList<String>(Arrays.asList("novella")),
+                        Date.from(new GregorianCalendar(1996, 1, 1).toInstant())));
+        bookrepo.addBook(
+                new Book(
+                        "856867867856",
+                        "Schindler bárkája",
+                        "Nagy Lóránt",
+                        new ArrayList<String>(Arrays.asList("regény", "életrajzi")),
+                        Date.from(new GregorianCalendar(1996, 1, 1).toInstant())));
+        books = bookrepo.getBooks();
         personrepo.addPerson(
                 new Person(
-                        "Kiss Gézáné",
+                        "Kiss Gézá",
                         "Szűcs Irén",
                         Date.from(new GregorianCalendar(1983, 1, 13).toInstant()),
                         new Address("city", "postalCode", "street")));

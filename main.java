@@ -1,6 +1,7 @@
 import com.pallas.controller.Library;
+import com.pallas.repository.RepositoryBook;
 import com.pallas.repository.RepositoryPerson;
-
+import com.pallas.service.ObjectBookService;
 import com.pallas.service.ObjectPersonService;
 
 public class main {
@@ -8,8 +9,9 @@ public class main {
         System.out.println("Üdvözöllek a könyvtár nyilvántartó programban");
         System.out.println("---------------------------------------------");
 
-        RepositoryPerson objectrepo = new RepositoryPerson(new ObjectPersonService());
-        Library lib = new Library(objectrepo);
+        RepositoryPerson objectpersonrepo = new RepositoryPerson(new ObjectPersonService());
+        RepositoryBook objectbookrepo = new RepositoryBook(new ObjectBookService());
+        Library lib = new Library(objectpersonrepo, objectbookrepo);
         lib.printBooks();
         System.out.println("");
         lib.printRentals();
