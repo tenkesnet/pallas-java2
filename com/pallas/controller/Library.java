@@ -84,7 +84,8 @@ public class Library {
         for (Person person : persons) {
             System.out.println("(" + person.getId() + ") " + person.getName() + " ( "
                     + format.format(person.getBirthday()) + " ) Anyja neve: "
-                    + person.getMotherName());
+                    + person.getMotherName() + "  Address: " + person.getAddress().getCity() + ", "
+                    + person.getAddress().getStreet());
         }
     }
 
@@ -107,6 +108,7 @@ public class Library {
         if (person != null) {
             Address address = new Address(city, postalCode, street);
             personrepo.changeAddress(person, address);
+            persons = personrepo.getPersons();
         }
 
     }

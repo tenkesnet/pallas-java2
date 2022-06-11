@@ -13,7 +13,9 @@ public class main {
 
         RepositoryPerson objectpersonrepo = new RepositoryPerson(new ObjectPersonService());
         RepositoryBook objectbookrepo = new RepositoryBook(new ObjectBookService());
+
         Library lib = new Library(objectpersonrepo, objectbookrepo);
+        lib.changeAddress(3, "Szeged", "7623", "Stadion u. 10");
         lib.printBooks();
         System.out.println("");
         lib.printRentals();

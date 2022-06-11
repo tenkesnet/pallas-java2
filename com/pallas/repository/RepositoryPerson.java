@@ -70,6 +70,6 @@ public class RepositoryPerson implements IRepositoryPerson {
     @Override
     public void changeAddress(Person person, Address address) {
         personservice.changeAddress(person, address);
-
+        persons = personservice.getPersons();
     }
 }
