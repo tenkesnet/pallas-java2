@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -64,15 +65,17 @@ public class pelda1 {
 
         ArrayList<Kor2> korok = null;
         ObjectMapper objectMapper = new ObjectMapper();
+
         try {
-            String jstring = Files.readString(Path.of("korok.json"));
+            String jstring = Files.readString(Paths.get("korok.json"));
             korok = objectMapper.readValue(jstring,
                     new TypeReference<ArrayList<Kor2>>() {
                     });
 
         } catch (IOException e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
+
         System.out.println(korok);
         // korok.add(new Kor(4));
         // korok.add(new Kor(4));

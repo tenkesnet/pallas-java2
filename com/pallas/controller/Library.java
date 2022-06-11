@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.text.SimpleDateFormat;
@@ -24,12 +25,15 @@ import com.google.gson.Gson;
 import com.pallas.model.Address;
 import com.pallas.model.Book;
 import com.pallas.model.Person;
+import com.pallas.repository.IRepositoryPerson;
 
 public class Library {
     private ArrayList<Book> books;
     private ArrayList<Person> persons;
+    private IRepositoryPerson personrepo;
 
-    public Library() {
+    public Library(IRepositoryPerson personrepo) {
+        this.personrepo = personrepo,
         books = new ArrayList<Book>();
         // books.add(
         // new Book(
@@ -78,7 +82,7 @@ public class Library {
 
     public void booksToFile() {
         try {
-            FileOutputStream fos = new FileOutputStream("books.db");
+            FileOutputStream fos = new FileOutputStream("books.db", false);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(books);
             oos.close();
