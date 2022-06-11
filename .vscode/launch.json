@@ -1,0 +1,119 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch Pelda1",
+            "request": "launch",
+            "mainClass": "com.Alkalmazott01.Pelda1",
+            "projectName": "pallas-java2_83b4ca27"
+        },
+        {
+            "type": "java",
+            "name": "Launch Pelda1(1)",
+            "request": "launch",
+            "mainClass": "com.Alkalmazott03.Pelda1",
+            "projectName": "pallas-java2_83b4ca27"
+        },
+        {
+            "type": "java",
+            "name": "Launch Pelda2",
+            "request": "launch",
+            "mainClass": "com.Alkalmazott03.Pelda2",
+            "projectName": "pallas-java2_83b4ca27"
+        },
+        {
+            "type": "java",
+            "name": "Launch Pelda3",
+            "request": "launch",
+            "mainClass": "com.Alkalmazott03.Pelda3",
+            "projectName": "pallas-java2_83b4ca27"
+        },
+        {
+            "type": "java",
+            "name": "Launch Pelda4",
+            "request": "launch",
+            "mainClass": "com.Alkalmazott03.Pelda4",
+            "projectName": "pallas-java2_83b4ca27"
+        },
+        {
+            "type": "java",
+            "name": "Launch Pelda6",
+            "request": "launch",
+            "mainClass": "com.Alkalmazott03.Pelda6",
+            "projectName": "pallas-java2_83b4ca27"
+        },
+        {
+            "type": "java",
+            "name": "Launch Pelda1(2)",
+            "request": "launch",
+            "mainClass": "com.Alkalmazott04.Pelda1",
+            "projectName": "pallas-java2_83b4ca27"
+        },
+        {
+            "type": "java",
+            "name": "Launch Pelda2(1)",
+            "request": "launch",
+            "mainClass": "com.Alkalmazott04.Pelda2",
+            "projectName": "pallas-java2_83b4ca27"
+        },
+        {
+            "type": "java",
+            "name": "Launch Pelda1(3)",
+            "request": "launch",
+            "mainClass": "com.Alkalmazott06.Pelda1",
+            "projectName": "pallas-java2_83b4ca27"
+        },
+        {
+            "type": "java",
+            "name": "Launch Pelda2(2)",
+            "request": "launch",
+            "mainClass": "com.Alkalmazott06.Pelda2",
+            "projectName": "pallas-java2_83b4ca27"
+        },
+        {
+            "type": "java",
+            "name": "Launch ArgumentumKiiro",
+            "request": "launch",
+            "mainClass": "com.ArgumentumKiiro.ArgumentumKiiro",
+            "projectName": "pallas-java2_83b4ca27"
+        },
+        {
+            "type": "java",
+            "name": "Launch Exit",
+            "request": "launch",
+            "mainClass": "com.Exit.Exit",
+            "projectName": "pallas-java2_83b4ca27"
+        },
+        {
+            "type": "java",
+            "name": "Launch Haliho",
+            "request": "launch",
+            "mainClass": "com.Haliho.Haliho",
+            "projectName": "pallas-java2_83b4ca27"
+        },
+        {
+            "type": "java",
+            "name": "Launch main",
+            "request": "launch",
+            "mainClass": "main",
+            "projectName": "pallas-java2_83b4ca27"
+        },
+        {
+            "type": "java",
+            "name": "Launch pelda1",
+            "request": "launch",
+            "mainClass": "pelda1",
+            "projectName": "pallas-java2_83b4ca27"
+        }
+    ]
+}

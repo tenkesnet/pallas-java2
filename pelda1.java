@@ -1,7 +1,14 @@
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 
 import javax.sound.midi.Soundbank;
 import javax.swing.text.AbstractDocument.BranchElement;
@@ -11,6 +18,15 @@ import com.Sikidom.Sikidom;
 import com.Sikidom.Teglalap;
 
 import com.google.gson.*;
+import com.google.gson.reflect.TypeToken;
+import com.fasterxml.jackson.annotation.PropertyAccessor;
+import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
+import com.fasterxml.jackson.core.*;
+import com.fasterxml.jackson.databind.*;
+import com.fasterxml.jackson.core.exc.StreamWriteException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.DatabindException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class pelda1 {
 
@@ -46,15 +62,55 @@ public class pelda1 {
         }
         // .......xx.........yy.......zz..........qq..................bb.....................
 
-        ArrayList<Kor> korok = new ArrayList<Kor>();
-        korok.add(new Kor(4));
-        korok.add(new Kor(4));
-        korok.add(new Kor(6));
-        korok.add(new Kor(13));
+        ArrayList<Kor> korok = null;
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            String jstring = Files.readString(Path.of("korok.json"));
+            korok = objectMapper.readValue(jstring,
+                    new TypeReference<ArrayList<Kor>>() {
+                    });
 
-        Gson gson = new Gson();
+        } catch (IOException e) {
+            // TODO: handle exception
+        }
+        System.out.println(korok);
+        // korok.add(new Kor(4));
+        // korok.add(new Kor(4));
+        // korok.add(new Kor(6));
+        // korok.add(new Kor(13));
 
-        System.out.println(gson.toJson(korok));
+        RandomAccessFile file;
+        // ObjectMapper objectMapper = new ObjectMapper();
+        // objectMapper.setVisibility(PropertyAccessor.FIELD, Visibility.ANY);
+        // try {
+        // objectMapper.writeValue(new File("korok.json"), korok);
+        // } catch (StreamWriteException e1) {
+        // // TODO Auto-generated catch block
+        // e1.printStackTrace();
+        // } catch (DatabindException e1) {
+        // // TODO Auto-generated catch block
+        // e1.printStackTrace();
+        // } catch (IOException e1) {
+        // // TODO Auto-generated catch block
+        // e1.printStackTrace();
+        // }
+
+        System.exit(1);
+        // try {
+        // file = new RandomAccessFile("korok.json", "rw");
+        // file.writeChars(gson.toJson(korok));
+        // file.close();
+        // } catch (FileNotFoundException e) {
+        // System.out.println(e);
+        // } catch (IOException e) {
+        // System.out.println(e);
+        // }
+        // System.exit(1);
+
+        for (String str : nevek) {
+            System.out.println(str);
+        }
+
         try {
 
             // System.out.println(new Kor(13).equals("13-askor"));

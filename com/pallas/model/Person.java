@@ -69,4 +69,12 @@ public class Person {
         this.debit = debit;
     }
 
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
+    }
+
 }

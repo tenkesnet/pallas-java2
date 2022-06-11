@@ -7,5 +7,11 @@ public class main {
 
         Library lib = new Library();
         lib.printBooks();
+        System.out.println("");
+        lib.printRentals();
+        System.out.println("");
+        lib.booksToFile();
+        System.out.println("");
+        System.out.println(lib.personsToJSON());
     }
 }

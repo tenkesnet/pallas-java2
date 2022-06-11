@@ -1,9 +1,10 @@
 package com.pallas.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Book {
+public class Book implements Serializable {
     private static long id;
     private String isbn;
     private String title;
