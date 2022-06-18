@@ -14,7 +14,10 @@ public class pelda2 {
         try {
             HttpRequest request = HttpRequest.newBuilder()
                     .GET()
-                    .uri(URI.create("https://www.google.com"))
+                    // .header("user-agent",
+                    // "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko)
+                    // Chrome/81.0.4044.138 Safari/537.36")
+                    .uri(URI.create("https://jsonplaceholder.typicode.com/users"))
                     .build();
             HttpResponse<String> response = httpClient.send(request,
                     HttpResponse.BodyHandlers.ofString());

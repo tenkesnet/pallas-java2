@@ -5,12 +5,16 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.net.URL;
 import java.nio.charset.Charset;
+import java.util.ArrayList;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 public class pelda3 {
-    private static String readAll(Reader rd) throws IOException {
+    private String readAll(Reader rd) throws IOException {
         StringBuilder sb = new StringBuilder();
         int cp;
         while ((cp = rd.read()) != -1) {
@@ -19,7 +23,7 @@ public class pelda3 {
         return sb.toString();
     }
 
-    public static JSONObject readJsonFromUrl(String url) throws IOException, JSONException {
+    public JSONObject readJsonFromUrl(String url) throws IOException, JSONException {
         InputStream is = new URL(url).openStream();
         try {
             BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
@@ -31,9 +35,34 @@ public class pelda3 {
         }
     }
 
+    public String readStringFromUrl(String url) throws IOException, JSONException {
+        InputStream is = new URL(url).openStream();
+        try {
+            BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
+            String jsonText = readAll(rd);
+            return jsonText;
+        } finally {
+            is.close();
+        }
+    }
+
     public static void main(String[] args) throws IOException, JSONException {
-        JSONObject json = readJsonFromUrl("https://jsonplaceholder.typicode.com/todos/1");
-        System.out.println(json.toString());
-        System.out.println(json.get("id"));
+        pelda3 p = new pelda3();
+        String jsonText = p.readStringFromUrl("https://jsonplaceholder.typicode.com/todos");
+
+        // System.out.println(jsonText);
+        ArrayList<Todo> todos = null;
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        try {
+
+            todos = objectMapper.readValue(jsonText,
+                    new TypeReference<ArrayList<Todo>>() {
+                    });
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println(todos);
     }
 }
