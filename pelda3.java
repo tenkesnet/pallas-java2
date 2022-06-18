@@ -48,21 +48,21 @@ public class pelda3 {
 
     public static void main(String[] args) throws IOException, JSONException {
         pelda3 p = new pelda3();
-        String jsonText = p.readStringFromUrl("https://jsonplaceholder.typicode.com/todos");
+        String jsonText = p.readStringFromUrl("https://jsonplaceholder.typicode.com/users");
 
         // System.out.println(jsonText);
-        ArrayList<Todo> todos = null;
+        ArrayList<User> users = null;
         ObjectMapper objectMapper = new ObjectMapper();
 
         try {
 
-            todos = objectMapper.readValue(jsonText,
-                    new TypeReference<ArrayList<Todo>>() {
+            users = objectMapper.readValue(jsonText,
+                    new TypeReference<ArrayList<User>>() {
                     });
 
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println(todos);
+        System.out.println(users);
     }
 }

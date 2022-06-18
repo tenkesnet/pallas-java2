@@ -1,5 +1,8 @@
 # Java Beckend + Tester
 
+## Linkek
+- [WAMP](https://bitnami.com/stack/wamp/installer)
+
 ## Vátozó típusok
 
 Primitívek:
