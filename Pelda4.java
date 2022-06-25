@@ -1,5 +1,4 @@
 import java.io.*;
-import java.nio.charset.Charset;
 
 public class Pelda4 {
     static int thirdNum;
@@ -27,7 +26,7 @@ public class Pelda4 {
         BufferedReader br = new BufferedReader(new FileReader("v.txt"));
         try {
             User u = new User();
-            BufferedReader br2 = new BufferedReader(new FileReader("v2.txt"));
+            BufferedReader br2 = new BufferedReader(new FileReader("v.txt"));
         } catch (Exception e) {
             throw new TestException("Test hiba:", e);
         }
@@ -38,6 +37,6 @@ public class Pelda4 {
         b.secondNum = Integer.parseInt(br.readLine());
         a.result = b.firstNum * b.secondNum;
         System.out.println("The Result is: " + a.result);
-
+        br.close();
     }
 }

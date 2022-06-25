@@ -1,5 +1,9 @@
 public class TestException extends Exception {
 
+    public TestException() {
+        super();
+    }
+
     public TestException(String errormessage) {
         super(errormessage);
     }

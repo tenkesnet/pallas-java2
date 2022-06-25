@@ -14,7 +14,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class pelda3 {
-    private String readAll(Reader rd) throws IOException {
+    private static String readAll(Reader rd) throws IOException {
         StringBuilder sb = new StringBuilder();
         int cp;
         while ((cp = rd.read()) != -1) {
@@ -23,7 +23,7 @@ public class pelda3 {
         return sb.toString();
     }
 
-    public JSONObject readJsonFromUrl(String url) throws IOException, JSONException {
+    public static JSONObject readJsonFromUrl(String url) throws IOException, JSONException {
         InputStream is = new URL(url).openStream();
         try {
             BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
@@ -35,7 +35,7 @@ public class pelda3 {
         }
     }
 
-    public String readStringFromUrl(String url) throws IOException, JSONException {
+    public static String readStringFromUrl(String url) throws IOException, JSONException {
         InputStream is = new URL(url).openStream();
         try {
             BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
@@ -63,6 +63,11 @@ public class pelda3 {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println(users);
+        int i = 1;
+        for (User u : users) {
+            int j = i++;
+            System.out.println(j + ". user: " + u);
+
+        }
     }
 }
