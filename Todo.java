@@ -1,5 +1,3 @@
-import com.fasterxml.jackson.annotation.*;
-
 public class Todo {
 
     // userId

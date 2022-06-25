@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Pelda4",
+            "request": "launch",
+            "mainClass": "Pelda4",
+            "projectName": "pallas-java2_83b4ca27"
+        },
+        {
+            "type": "java",
             "name": "Launch pelda3",
             "request": "launch",
             "mainClass": "pelda3",
