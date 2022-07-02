@@ -17,6 +17,10 @@ public class Person implements Serializable {
     private Date membershipDate;
     private double debit;
 
+    public Person() {
+
+    }
+
     public Person(String name, String motherName, Date birthday, Address address) {
         this.name = name;
         this.motherName = motherName;

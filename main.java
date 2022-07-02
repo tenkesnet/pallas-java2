@@ -4,6 +4,7 @@ import com.pallas.controller.Library;
 import com.pallas.repository.RepositoryBook;
 import com.pallas.repository.RepositoryPerson;
 import com.pallas.service.JsonBookService;
+import com.pallas.service.JsonPersonService;
 import com.pallas.service.ObjectBookService;
 import com.pallas.service.ObjectPersonService;
 
@@ -12,7 +13,7 @@ public class main {
         System.out.println("Üdvözöllek a könyvtár nyilvántartó programban");
         System.out.println("---------------------------------------------");
 
-        RepositoryPerson objectpersonrepo = new RepositoryPerson(new ObjectPersonService());
+        RepositoryPerson objectpersonrepo = new RepositoryPerson(new JsonPersonService());
         RepositoryBook objectbookrepo = new RepositoryBook(new JsonBookService());
 
         Library lib = new Library(objectpersonrepo, objectbookrepo);
@@ -24,8 +25,8 @@ public class main {
         System.out.println("A keresett (856867867856) könyv szerzzője: " + lib.getBook("856867867856").getAuthor());
         System.out.println("");
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-        System.out.println("A keresett (Kiss Géza) Születési ideje: " +
-                format.format(lib.getPerson("Kiss Géza", "Szűcs Irén").getBirthday()));
+        System.out.println("A keresett (Kiss Evelin) Születési ideje: " +
+                format.format(lib.getPerson("Kiss Evelin", "Szűcs Irén").getBirthday()));
         // System.out.println(lib.personsToJSON());
     }
 }
