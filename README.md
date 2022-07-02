@@ -56,13 +56,20 @@ try {
 ```
 ## Deszerializáció
 ```
-ArrayList<User> users = null;
+ArrayList<Person> persons = null;
+String jsonText = "";
+try {
+    jsonText = Files.readString(Paths.get("persons.json"));
+} catch (Exception e) {
+    // TODO: handle exception
+}
+
 ObjectMapper objectMapper = new ObjectMapper();
 
 try {
 
-    users = objectMapper.readValue(jsonText,
-            new TypeReference<ArrayList<User>>() {
+    persons = objectMapper.readValue(jsonText,
+            new TypeReference<ArrayList<Person>>() {
             });
 
 } catch (IOException e) {
