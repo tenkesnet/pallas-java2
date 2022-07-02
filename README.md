@@ -37,9 +37,23 @@ String (or any object)   null
     Egy adott tevékenység (metódus) azonosítója közös lehet egy adott objektum hierarchián belül, ugyanakkor a hierarchia minden egyes objektumában a tevékenységeket végrehajtó metódus implementációja az adott objektumra nézve specifikus lehet.
 
 ## Szerializáció
-...
-
-...
+```
+        RandomAccessFile file;
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.setVisibility(PropertyAccessor.FIELD, Visibility.ANY);
+        try {
+            objectMapper.writeValue(new File("korok.json"), korok);
+        } catch (StreamWriteException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        } catch (DatabindException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        } catch (IOException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }
+```
 ## Deszerializáció
 ```
 ArrayList<User> users = null;
