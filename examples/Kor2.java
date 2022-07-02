@@ -1,3 +1,5 @@
+package examples;
+
 public class Kor2 {
     private int r;
     private String name;

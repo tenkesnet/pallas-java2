@@ -35,3 +35,21 @@ String (or any object)   null
 3. Többalakúság (polimorfizmus)
 
     Egy adott tevékenység (metódus) azonosítója közös lehet egy adott objektum hierarchián belül, ugyanakkor a hierarchia minden egyes objektumában a tevékenységeket végrehajtó metódus implementációja az adott objektumra nézve specifikus lehet.
+
+## Szerializáció
+
+## Deszerializáció
+...
+ArrayList<User> users = null;
+ObjectMapper objectMapper = new ObjectMapper();
+
+try {
+
+    users = objectMapper.readValue(jsonText,
+            new TypeReference<ArrayList<User>>() {
+            });
+
+} catch (IOException e) {
+    e.printStackTrace();
+}
+...
