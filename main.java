@@ -1,10 +1,9 @@
-package examples;
-
 import java.text.SimpleDateFormat;
 
 import com.pallas.controller.Library;
 import com.pallas.repository.RepositoryBook;
 import com.pallas.repository.RepositoryPerson;
+import com.pallas.service.JsonBookService;
 import com.pallas.service.ObjectBookService;
 import com.pallas.service.ObjectPersonService;
 
@@ -14,7 +13,7 @@ public class main {
         System.out.println("---------------------------------------------");
 
         RepositoryPerson objectpersonrepo = new RepositoryPerson(new ObjectPersonService());
-        RepositoryBook objectbookrepo = new RepositoryBook(new ObjectBookService());
+        RepositoryBook objectbookrepo = new RepositoryBook(new JsonBookService());
 
         Library lib = new Library(objectpersonrepo, objectbookrepo);
         lib.changeAddress(3, "Szeged", "7623", "Stadion u. 10");

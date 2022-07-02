@@ -14,6 +14,10 @@ public class Book implements Serializable {
     private Date rentalDate;
     private int state;
 
+    public Book() {
+
+    }
+
     public Book(String isbn, String title, String author, ArrayList<String> genres, Date issueDate) {
         this.isbn = isbn == null ? "" : isbn;
         this.title = title == null ? "" : title;

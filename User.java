@@ -12,8 +12,8 @@ public class User {
     @Override
     public String toString() {
 
-        return "User [address=" + address.city + ", company=" + company.name
-                + "; lat:" + address.geo.lat + ", lng" + address.geo.lng + ", email=" + email;
+        return "User [address=" + address.city + ", company=" + company.getName()
+                + "; lat:" + address.geo.getLat() + ", lng" + address.geo.getLng() + ", email=" + email;
         /*
          * + ", id=" + id
          * + ", name="

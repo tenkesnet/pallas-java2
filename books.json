@@ -1,0 +1,26 @@
+[
+    {
+        "isbn": "I23423534534",
+        "title": "Kis Lovag",
+        "author": "Kis Lovag",
+        "genres": [
+            "regény",
+            "novella"
+        ],
+        "rentalDate": 1656763452508,
+        "state": 0,
+        "issue": 823129200000
+    },
+    {
+        "isbn": "856867867856",
+        "title": "Schindler bárkája",
+        "author": "Schindler bárkája",
+        "genres": [
+            "regény",
+            "életrajzi"
+        ],
+        "rentalDate": 1656763452510,
+        "state": 0,
+        "issue": 823129200000
+    }
+]

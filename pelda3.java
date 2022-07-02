@@ -65,7 +65,7 @@ public class pelda3 {
                     });
 
         } catch (IOException e) {
-            // e.printStackTrace();
+            e.printStackTrace();
             users = new ArrayList<User>();
         }
         int i = 1;
