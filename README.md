@@ -38,21 +38,21 @@ String (or any object)   null
 
 ## Szerializáció
 ```
-        RandomAccessFile file;
-        ObjectMapper objectMapper = new ObjectMapper();
-        objectMapper.setVisibility(PropertyAccessor.FIELD, Visibility.ANY);
-        try {
-            objectMapper.writeValue(new File("korok.json"), korok);
-        } catch (StreamWriteException e1) {
-            // TODO Auto-generated catch block
-            e1.printStackTrace();
-        } catch (DatabindException e1) {
-            // TODO Auto-generated catch block
-            e1.printStackTrace();
-        } catch (IOException e1) {
-            // TODO Auto-generated catch block
-            e1.printStackTrace();
-        }
+RandomAccessFile file;
+ObjectMapper objectMapper = new ObjectMapper();
+objectMapper.setVisibility(PropertyAccessor.FIELD, Visibility.ANY);
+try {
+    objectMapper.writeValue(new File("korok.json"), korok);
+} catch (StreamWriteException e1) {
+    // TODO Auto-generated catch block
+    e1.printStackTrace();
+} catch (DatabindException e1) {
+    // TODO Auto-generated catch block
+    e1.printStackTrace();
+} catch (IOException e1) {
+    // TODO Auto-generated catch block
+    e1.printStackTrace();
+}
 ```
 ## Deszerializáció
 ```
