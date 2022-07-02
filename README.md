@@ -37,9 +37,11 @@ String (or any object)   null
     Egy adott tevékenység (metódus) azonosítója közös lehet egy adott objektum hierarchián belül, ugyanakkor a hierarchia minden egyes objektumában a tevékenységeket végrehajtó metódus implementációja az adott objektumra nézve specifikus lehet.
 
 ## Szerializáció
-
-## Deszerializáció
 ...
+
+...
+## Deszerializáció
+```
 ArrayList<User> users = null;
 ObjectMapper objectMapper = new ObjectMapper();
 
@@ -52,4 +54,5 @@ try {
 } catch (IOException e) {
     e.printStackTrace();
 }
-...
+```
+
