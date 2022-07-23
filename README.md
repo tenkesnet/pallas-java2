@@ -77,3 +77,18 @@ try {
 }
 ```
 
+## SQL alapok
+
+```
+CREATE EXTENSION "uuid-ossp";
+
+CREATE TABLE IF NOT EXISTS public.student
+(
+    student_id uuid NOT NULL DEFAULT uuid_generate_v4(),
+    name text COLLATE pg_catalog."default" NOT NULL,
+    address text COLLATE pg_catalog."default" NOT NULL,
+    phone_number text COLLATE pg_catalog."default",
+    class text COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT student_pkey PRIMARY KEY (student_id)
+)
+```
