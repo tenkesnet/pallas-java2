@@ -79,6 +79,11 @@ try {
 
 ## SQL alapok
 
+### DDL - Data Definition Language
+
+
+Azokat az utasításokat nevezzük DDL-nek, melyek a táblát, mint adathalmazt módosítja. Példa DDL utasítások:
+
 ```
 CREATE EXTENSION "uuid-ossp";
 
@@ -91,4 +96,8 @@ CREATE TABLE IF NOT EXISTS public.student
     class text COLLATE pg_catalog."default" NOT NULL,
     CONSTRAINT student_pkey PRIMARY KEY (student_id)
 )
+
+DROP TABLE public.student;
+
+ALTER TABLE student ADD has_chip BOOLEAN;
 ```
