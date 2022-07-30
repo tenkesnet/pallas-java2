@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch peldadb",
+            "request": "launch",
+            "mainClass": "peldadb",
+            "projectName": "pallas-java2_83b4ca27"
+        },
+        {
+            "type": "java",
             "name": "Launch Cat",
             "request": "launch",
             "mainClass": "Cat",
