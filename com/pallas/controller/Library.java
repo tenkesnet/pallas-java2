@@ -38,34 +38,38 @@ public class Library {
         this.personrepo = personrepo;
         this.bookrepo = bookrepo;
 
-        bookrepo.addBook(
-                new Book(
-                        "I23423534534",
-                        "Kis Lovag",
-                        "Kiss Géza",
-                        new ArrayList<String>(Arrays.asList("novella")),
-                        Date.from(new GregorianCalendar(1996, 1, 1).toInstant())));
-        bookrepo.addBook(
-                new Book(
-                        "856867867856",
-                        "Schindler bárkája",
-                        "Nagy Lóránt",
-                        new ArrayList<String>(Arrays.asList("regény", "életrajzi")),
-                        Date.from(new GregorianCalendar(1996, 1, 1).toInstant())));
+        /*
+         * bookrepo.addBook(
+         * new Book(
+         * "I23423534534",
+         * "Kis Lovag",
+         * "Kiss Géza",
+         * new ArrayList<String>(Arrays.asList("novella")),
+         * Date.from(new GregorianCalendar(1996, 1, 1).toInstant())));
+         * bookrepo.addBook(
+         * new Book(
+         * "856867867856",
+         * "Schindler bárkája",
+         * "Nagy Lóránt",
+         * new ArrayList<String>(Arrays.asList("regény", "életrajzi")),
+         * Date.from(new GregorianCalendar(1996, 1, 1).toInstant())));
+         */
         books = bookrepo.getBooks();
 
-        personrepo.addPerson(
-                new Person(
-                        "Orbán Viktor",
-                        "Varka Irén",
-                        Date.from(new GregorianCalendar(1963, 5, 13).toInstant()),
-                        new Address("city", "postalCode", "street")));
-        personrepo.addPerson(
-                new Person(
-                        "Kiss Evelin",
-                        "Szűcs Irén",
-                        Date.from(new GregorianCalendar(1988, 11, 31).toInstant()),
-                        new Address("city", "postalCode", "street")));
+        /*
+         * personrepo.addPerson(
+         * new Person(
+         * "Orbán Viktor",
+         * "Varka Irén",
+         * Date.from(new GregorianCalendar(1963, 5, 13).toInstant()),
+         * new Address("city", "postalCode", "street")));
+         * personrepo.addPerson(
+         * new Person(
+         * "Kiss Evelin",
+         * "Szűcs Irén",
+         * Date.from(new GregorianCalendar(1988, 11, 31).toInstant()),
+         * new Address("city", "postalCode", "street")));
+         */
         persons = personrepo.getPersons();
     }
 
@@ -73,7 +77,8 @@ public class Library {
         System.out.println("Könyvek listája:");
         for (Book book : books) {
             System.out.println(
-                    "-" + book.getTitle() + " ( " + String.join(",", book.getGenres()) + " ) - ISBN: "
+                    "-" + book.getTitle() + " ( " + String.join(
+                            ";", book.getGenres()) + " ) - ISBN: "
                             + book.getIsbn());
         }
     }

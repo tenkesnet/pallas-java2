@@ -9,12 +9,14 @@ public class Cat {
         // System.out.println(user);
         System.out.println(a);
         System.out.println("Argumentum hossza: " + tetovateve.length);
-        for (int i = 0; i < tetovateve.length; i++) {
-            System.out.println(i + ". elem: " + tetovateve[i]);
-            users.add(tetovateve[i]);
-        }
-        for (String elem : users) {
-
+        /*
+         * for (int i = 0; i < tetovateve.length; i++) {
+         * System.out.println(i + ". elem: " + tetovateve[i]);
+         * users.add(tetovateve[i]);
+         * }
+         */
+        for (String elem : tetovateve) {
+            System.out.println("elem: " + elem);
         }
     }
 }

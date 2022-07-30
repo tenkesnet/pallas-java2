@@ -1,5 +1,6 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
@@ -7,6 +8,7 @@ public class peldadb {
     public static void main(String[] args) {
         Connection c = null;
         Statement stmt = null;
+
         try {
             Class.forName("org.postgresql.Driver");
             c = DriverManager
@@ -16,9 +18,21 @@ public class peldadb {
             System.out.println("Opened database successfully");
 
             stmt = c.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM COMPANY;");
-            while (rs.next()) {
+            String sql = "select * from book";
+            PreparedStatement st = c.prepareStatement(sql);
+            ResultSet result = st.executeQuery();
+
+            while (result.next()) {
+                System.out.print("Id: " + result.getInt("id"));
+                System.out.print(" ; Name: " + result.getString("name"));
+                System.out.println(" ; Fizetés: " + result.getDouble("salary"));
             }
+            // stmt.executeUpdate(sql);
+
+            stmt.close();
+            c.commit();
+            c.close();
+
         } catch (Exception e) {
             e.printStackTrace();
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
